@@ -9,12 +9,12 @@ absolutePathToRepo='C:\bootcamp_dry\MCSBBootcampDry\Day 1\julia_fractal';
 localpath=pwd;
 
 %run generate_fractal script
-run(strcat(localpath, '\codebase/generate_fractal.m'))
+run(strcat(localpath, '\codebase\generate_fractal.m'))
 
 %save the unique identifier of the git commit used to generate the data
-system(['cd "' absolutePathToRepo '";' ...
-    ' git log -1 --pretty=format:%H > "CommitUsedHash.txt";' ...
-    'mv CommitUsedHash.txt "' localpath '"']);
+cd(absolutePathToRepo);
+system('git log -1 --pretty=format:%H > "CommitUsedHash.txt"');
+movefile CommitUsedHash.txt localpath
 
 % Save to file
 save('juliaSet3.mat', 'p', 'nmax');

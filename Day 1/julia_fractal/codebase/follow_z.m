@@ -6,8 +6,9 @@ z2=z1;
 nmax=1;
 
 while nmax<22 && abs(z2(end))<=2
+   
+   z2(nmax+1)=z2(nmax).^2+c;
    nmax=nmax+1;
-   z2(nmax)=z2(nmax-1).^2+c;
 end
 
 end
