@@ -3,15 +3,15 @@
 % x- population of RABBITS in thousands
 % n- time in WEEKS
 
+r=2.5;
 K=.6;
-x0=.2;
-x=zeros(100,1);x(1)=x0;
+x0=.4;
+x=zeros(20,1);x(1)=x0;
 for r=0:.1:3
     for k=2:100
         x(k)=x(k-1)+r*(1-x(k-1)/K)*x(k-1);
     end
-    %if x(end0-3)-x(end)
-    plot(r,x(end-3:end),'*')
+    plot(r,x(end))
 end
 
 nMax = 20;% max number of days to simulate
